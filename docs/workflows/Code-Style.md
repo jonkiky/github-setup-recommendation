@@ -175,7 +175,6 @@ jobs:
         run: npm run lint:ci
 
 ```
-
 ---
 
 ###  4. Test the GitHub Action
