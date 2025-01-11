@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/github-setup-recommendation">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789948713832">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789949170890">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -31,11 +31,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.789948713832" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.789949170890" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.789948713832" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.789949170890" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.789948713832" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.789949170890" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.789949170890" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -170,11 +171,105 @@
         <span>508 Compliance</span>
     </h1>
 </doc-anchor-target>
-<p>We use the <code v-pre>eslint-plugin-jsx-a11y</code> to ensure 508 compliance in our projects. To use this plugin, you need to install ESLint and configure it to include the <code v-pre>jsx-a11y</code> plugin. Below is an example configuration:</p>
-<p><a href="https://github.com/jonkiky/github-setup-recommendation/blob/main/.eslintrc.js">Example ESLint Configuration</a></p>
+<p>We use the <code v-pre>eslint-plugin-jsx-a11y</code> to ensure 508 compliance in our projects. To use this plugin, you need to install ESLint and configure it to include the <code v-pre>jsx-a11y</code> plugin. This guide will help you configure and use <code v-pre>eslint-plugin-jsx-a11y</code> to improve the accessibility of your React applications.</p>
+<hr>
+<doc-anchor-target id="step-1-install-the-plugin">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-install-the-plugin">#</doc-anchor-trigger>
+        <span>Step 1: Install the Plugin</span>
+    </h2>
+</doc-anchor-target>
+<p>To get started, install the plugin using either <strong>npm</strong> or <strong>yarn</strong>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash"># Using npm
+npm install eslint-plugin-jsx-a11y --save-dev
+
+# Using yarn
+yarn add eslint-plugin-jsx-a11y --dev</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="step-2-configure-eslint">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2-configure-eslint">#</doc-anchor-trigger>
+        <span>Step 2: Configure ESLint</span>
+    </h2>
+</doc-anchor-target>
+<p>Add eslint-plugin-jsx-a11y to your .eslintrc.json configuration file:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">module.exports = {
+  parser: 'babel-eslint', // or your preferred parser
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
+  ],
+  plugins: [
+    'react',
+    'jsx-a11y',
+  ],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2020,
+    sourceType: 'module',
+  },
+  rules: {
+    // Customize your rules as needed
+    'jsx-a11y/alt-text': 'warn',
+    'jsx-a11y/anchor-is-valid': 'warn',
+    // Add additional rule overrides here
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+};
+
+</code></pre>
+</doc-codeblock></div>
 <p>Once the <code v-pre>eslint-plugin-jsx-a11y</code> is added, we can use a GitHub Action to trigger it during the pull request (PR) process.</p>
 <p>Below is an example GitHub Action workflow:</p>
-<p><a href="https://github.com/jonkiky/INS-WebPortal/blob/main/.github/workflows/main.yml">Example GitHub Action Workflow</a></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml">name: Lint JSX-A11y Codebase
+
+on:
+  push:
+    branches: &quot;*&quot;
+  pull_request:
+    branches: &quot;*&quot;
+
+jobs:
+  lint:
+    name: Run ESLint with jsx-a11y
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16 # Use the desired Node.js version
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      # Step 4: Run ESLint with jsx-a11y plugin
+      - name: Run ESLint
+        run: npx eslint --plugin &quot;jsx-a11y&quot; ./src
+
+</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="how-the-plugin-works">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-the-plugin-works">#</doc-anchor-trigger>
@@ -259,6 +354,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "508 Compliance", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "508 Compliance", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
