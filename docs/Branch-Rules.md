@@ -19,14 +19,14 @@ See example:  https://github.com/jonkiky/github-setup-recommendation/settings/ru
 Development Branch Protection enforces secure workflows by restricting branch creation/deletion, requiring pull requests with approvals, status checks, CodeQL scanning, blocking force pushes, and AI review via Copilot.
 
 In Branch Rules, enable :
-_ Restrict branch creations
-_ Restrict branch deletions
-_ Require a pull request before merging
-_ Require at least 1 approval for pull requests
-_ Block force pushes
-_ Require status checks to pass before merging
-_ Require CodeQL code scanning results
-_ Automatically request pull request review from GitHub Copilot
+- Restrict branch creations
+- Restrict branch deletions
+- Require a pull request before merging
+- Require at least 1 approval for pull requests
+- Block force pushes
+- Require status checks to pass before merging
+- Require CodeQL code scanning results
+- Automatically request pull request review from GitHub Copilot
 
 See example:  
 https://github.com/jonkiky/github-setup-recommendation/settings/rules/3233346
