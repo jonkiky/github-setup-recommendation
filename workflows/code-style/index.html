@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/github-setup-recommendation">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789941971773">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789943670867">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -31,12 +31,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.789941971773" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.789943670867" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.789941971773" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.789943670867" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.789941971773" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.789941971773" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.789943670867" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.789943670867" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -171,24 +171,18 @@
         <span>Code Styling (ESlint)</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="maintaining-consistent-code-styling-with-eslint-and-github-actions">
+<doc-anchor-target id="maintaining-consistent-code-styling-with-eslint">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#maintaining-consistent-code-styling-with-eslint-and-github-actions">#</doc-anchor-trigger>
-        <span>Maintaining Consistent Code Styling with ESLint and GitHub Actions</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="problem-to-solve">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#problem-to-solve">#</doc-anchor-trigger>
-        <span>Problem to Solve</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#maintaining-consistent-code-styling-with-eslint">#</doc-anchor-trigger>
+        <span>Maintaining Consistent Code Styling with ESLint</span>
     </h2>
 </doc-anchor-target>
 <p>When working on a shared codebase with multiple developers, maintaining consistent code formatting and styling can be challenging. Inconsistent styling can cause inefficiencies, merge conflicts, and reduced code readability.</p>
 <hr>
-<doc-anchor-target id="solution-overview">
+<doc-anchor-target id="solution">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#solution-overview">#</doc-anchor-trigger>
-        <span>Solution Overview</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#solution">#</doc-anchor-trigger>
+        <span>Solution</span>
     </h2>
 </doc-anchor-target>
 <p>To ensure consistent styling across your codebase, you can use <strong>ESLint</strong> to enforce coding standards and integrate it with <strong>Prettier</strong> for detailed formatting rules. By automating code checks using <strong>GitHub Actions</strong>, you can enforce these standards at the pull request (PR) level, ensuring contributions are compliant before merging.</p>
@@ -205,10 +199,118 @@
         <span>1. Configure ESLint and Prettier</span>
     </h3>
 </doc-anchor-target>
+<doc-anchor-target id="how-to-configure-eslint-and-prettier">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-configure-eslint-and-prettier">#</doc-anchor-trigger>
+        <span>How to Configure ESLint and Prettier</span>
+    </h1>
+</doc-anchor-target>
+<p>Follow these steps to set up <strong>ESLint</strong> and <strong>Prettier</strong> in your project:</p>
+<hr>
+<doc-anchor-target id="step-1-install-eslint">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-install-eslint">#</doc-anchor-trigger>
+        <span>Step 1: Install ESLint</span>
+    </h2>
+</doc-anchor-target>
+<p>Install ESLint as a development dependency:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">npm install eslint --save-dev</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="step-2-initialize-eslint">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2-initialize-eslint">#</doc-anchor-trigger>
+        <span>Step 2: Initialize ESLint</span>
+    </h2>
+</doc-anchor-target>
+<p>Set up an ESLint configuration file by running:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">npx eslint --init
+</code></pre>
+</doc-codeblock></div>
+<p>You will be prompted to answer several questions:</p>
+<p>The purpose of ESLint (e.g., check syntax, find problems, enforce code style).
+Your module system preference (CommonJS or ES Modules).
+Your framework (e.g., React, Vue, etc.).
+Whether you&#x27;re using TypeScript.
+Your preferred configuration format (JavaScript, JSON, or YAML).
+After completing the setup, an .eslintrc file will be created in your project.</p>
+<doc-anchor-target id="step-3-install-prettier">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-3-install-prettier">#</doc-anchor-trigger>
+        <span>Step 3: Install Prettier</span>
+    </h2>
+</doc-anchor-target>
+<p>Install Prettier as a development dependency:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">npm install prettier --save-dev</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="step-4-integrate-eslint-and-prettier">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-4-integrate-eslint-and-prettier">#</doc-anchor-trigger>
+        <span>Step 4: Integrate ESLint and Prettier</span>
+    </h2>
+</doc-anchor-target>
+<p>Install additional plugins to integrate ESLint with Prettier:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">npm install eslint-config-prettier eslint-plugin-prettier --save-dev</code></pre>
+</doc-codeblock></div>
 <ul>
-<li>Follow the latest instructions in the <a href="https://eslint.org/docs/latest/getting-started">Getting Started with ESLint guide</a> to set up ESLint in your project.</li>
-<li>Optionally, integrate <strong>Prettier</strong> with ESLint to handle formatting in addition to linting.</li>
+<li>eslint-config-prettier: Disables ESLint rules that conflict with Prettier.</li>
+<li>eslint-plugin-prettier: Allows Prettier to run as an ESLint rule, reporting formatting issues directly in ESLint.</li>
 </ul>
+<doc-anchor-target id="step-5-update-eslint-configuration">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-5-update-eslint-configuration">#</doc-anchor-trigger>
+        <span>Step 5: Update ESLint Configuration</span>
+    </h2>
+</doc-anchor-target>
+<p>Modify your .eslintrc file to include Prettier integration. Below is an example configuration:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;extends&quot;: [
+    &quot;eslint:recommended&quot;,
+    &quot;plugin:prettier/recommended&quot;
+  ],
+  &quot;rules&quot;: {
+    &quot;prettier/prettier&quot;: [
+      &quot;error&quot;,
+      {
+        &quot;endOfLine&quot;: &quot;auto&quot;
+      }
+    ]
+  }
+}</code></pre>
+</doc-codeblock></div>
+<p>This configuration:</p>
+<p>Extends ESLint&#x27;s recommended rules.
+Enables Prettier as a plugin.
+Treats Prettier formatting issues as ESLint errors.
+Step 6: (Optional) Add a Prettier Configuration File
+To customize Prettier&#x27;s formatting rules, create a .prettierrc file. Here&#x27;s an example:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;semi&quot;: true,
+  &quot;singleQuote&quot;: true,
+  &quot;tabWidth&quot;: 2,
+  &quot;trailingComma&quot;: &quot;es5&quot;
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="step-7-test-the-setup">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-7-test-the-setup">#</doc-anchor-trigger>
+        <span>Step 7: Test the Setup</span>
+    </h2>
+</doc-anchor-target>
+<p>Run ESLint to verify your configuration:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">npx eslint .</code></pre>
+</doc-codeblock></div>
+<p>To automatically fix formatting issues, use:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">npx eslint . --fix</code></pre>
+</doc-codeblock></div>
+<p>By following these steps, you&#x27;ll have a fully configured ESLint and Prettier setup, ensuring consistent code formatting and styling across your project.</p>
 <hr>
 <doc-anchor-target id="2-add-a-linting-script-to-your-project">
     <h3>
