@@ -4,6 +4,11 @@
 
 A safeguard mechanism that ensures released tags remain immutable after being created. Once a tag is marked as released, it cannot be recreated, deleted, or modified, preserving the integrity and consistency of versioned releases.
 
+In Branch Rules, enable :
+- Restrict creations
+- Restrict creations
+- Restrict creations
+- Block force pushes
 
 See example:  https://github.com/jonkiky/github-setup-recommendation/settings/rules/3233309
 
@@ -11,10 +16,20 @@ See example:  https://github.com/jonkiky/github-setup-recommendation/settings/ru
 
 ## Development Branch Protection
 
-A safeguard mechanism that ensures Development tags remain immutable after being created. Once a tag is marked as released, it cannot be recreated, deleted, or modified, preserving the integrity and consistency of versioned releases.
+Development Branch Protection enforces secure workflows by restricting branch creation/deletion, requiring pull requests with approvals, status checks, CodeQL scanning, blocking force pushes, and AI review via Copilot.
 
+In Branch Rules, enable :
+_ Restrict branch creations
+_ Restrict branch deletions
+_ Require a pull request before merging
+_ Require at least 1 approval for pull requests
+_ Block force pushes
+_ Require status checks to pass before merging
+_ Require CodeQL code scanning results
+_ Automatically request pull request review from GitHub Copilot
 
-
+See example:  
+https://github.com/jonkiky/github-setup-recommendation/settings/rules/3233346
 
 
 ## Instructions for Creating a Branch or Tag Ruleset on GitHub
@@ -35,18 +50,8 @@ Follow these steps to create a branch or tag ruleset in your GitHub repository:
    - Enter a name for the ruleset in the **Name** field.
    - Choose whether the ruleset applies to **Branches** or **Tags**.
 
-### Step 4: Define Target Branches or Tags
-1. Specify which branches or tags the ruleset applies to:
-   - Use the **Include** field to define patterns for the branches or tags you want to target.
-   - Optionally, use the **Exclude** field to exclude specific branches or tags.
+### Step 4: Configure Ruleset as needed
 
-### Step 5: Configure Ruleset Conditions
-1. Select the conditions to enforce for your branches or tags:
-   - **Require a pull request before merging**: Ensure changes are merged only through a pull request.
-   - **Require status checks to pass before merging**: Mandate that CI checks pass before merging.
-   - **Require signed commits**: Enforce commit signing for added security.
-   - **Restrict who can push**: Limit push access to specific users or teams.
-2. Adjust rules according to the needs of your project.
 
 ### Step 6: Save the Ruleset
 1. Click the **Create** or **Save ruleset** button to finalize your settings.
@@ -54,5 +59,3 @@ Follow these steps to create a branch or tag ruleset in your GitHub repository:
 ### Step 7: Manage and Test the Ruleset
 1. Perform actions such as pushing commits or merging pull requests to verify the ruleset’s enforcement.
 2. To make adjustments, return to the **Rulesets** section in the repository settings.
-
-By following these steps, you can effectively manage branch or tag protection rules and maintain the integrity of your GitHub repository.
