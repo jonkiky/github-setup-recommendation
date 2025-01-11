@@ -2,11 +2,14 @@ input: ./docs
 output: .retype
 url: https://jonkiky.github.io/github-setup-recommendation/
 branding:
-  title: Docs
-  label: Docs
+  title: RepoWizard 
+  label: 1.0.0
+
 links:
-  - text: Getting Started
+  - text: About US
     link: https://jonkiky.github.io/github-setup-recommendation/guides/getting-started/
+
+
 footer:
   copyright: "&copy; Copyright . All rights reserved."
 
