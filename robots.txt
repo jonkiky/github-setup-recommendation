@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml.gz
+Sitemap: https://jonkiky.github.io/github-setup-recommendation/sitemap.xml.gz
