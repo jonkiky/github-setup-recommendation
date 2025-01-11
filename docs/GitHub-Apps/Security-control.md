@@ -53,9 +53,8 @@
 3. Click on the **Settings** tab in the project's menu.
 . Locate the **Testing frequency** section.
 4. Choose the frequency at which Snyk tests your dependencies for vulnerabilities:
-   - **Daily**: Tests will run every day.
-   - **Weekly**: Tests will run once a week.
-   - **Monthly**: Tests will run once a month.
+   - **Test Weekly**: Tests will run every week.
+   - **Test Never**: Never Test. 
 5. Save your changes to apply the new frequency.
 
 ---
