@@ -2,10 +2,15 @@ input: .
 output: .retype
 url: https://jonkiky.github.io/github-setup-recommendation/
 branding:
-  title: GSR
+  title: Docs
   label: Docs
 links:
   - text: Getting Started
     link: https://jonkiky.github.io/github-setup-recommendation/guides/getting-started/
 footer:
   copyright: "&copy; Copyright . All rights reserved."
+
+edit:
+  repo: "https://github.com/jonkiky/github-setup-recommendation"
+  branch: main
+  base: /docs/
