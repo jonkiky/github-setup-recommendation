@@ -18,13 +18,8 @@ To ensure consistent styling across your codebase, you can use **ESLint** to enf
 ## How to Use ESLint with GitHub Actions
 
 ### 1. Configure ESLint and Prettier
-# How to Configure ESLint and Prettier
 
-Follow these steps to set up **ESLint** and **Prettier** in your project:
-
----
-
-## Step 1: Install ESLint
+#### Step 1: Install ESLint
 
 Install ESLint as a development dependency:
 
@@ -33,7 +28,7 @@ npm install eslint --save-dev
 ```
 
 
-## Step 2: Initialize ESLint
+#### Step 2: Initialize ESLint
 
 Set up an ESLint configuration file by running:
 
@@ -52,14 +47,14 @@ Whether you're using TypeScript.
 Your preferred configuration format (JavaScript, JSON, or YAML).
 After completing the setup, an .eslintrc file will be created in your project.
 
-##  Step 3: Install Prettier
+####  Step 3: Install Prettier
 Install Prettier as a development dependency:
 
 ```bash
 npm install prettier --save-dev
 ```
 
-##  Step 4: Integrate ESLint and Prettier
+####  Step 4: Integrate ESLint and Prettier
 Install additional plugins to integrate ESLint with Prettier:
 
 ```bash
@@ -70,7 +65,7 @@ npm install eslint-config-prettier eslint-plugin-prettier --save-dev
 - eslint-plugin-prettier: Allows Prettier to run as an ESLint rule, reporting formatting issues directly in ESLint.
 
 
-##  Step 5: Update ESLint Configuration
+####  Step 5: Update ESLint Configuration
 
 Modify your .eslintrc file to include Prettier integration. Below is an example configuration:
 
@@ -108,7 +103,7 @@ To customize Prettier's formatting rules, create a .prettierrc file. Here's an e
 ``` 
 
 
-##  Step 7: Test the Setup
+####  Step 7: Test the Setup
 Run ESLint to verify your configuration:
 
 ```  bash
