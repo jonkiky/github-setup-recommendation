@@ -1,11 +1,8 @@
+# Secret Protection 
 # Enabling Secret Scanning on GitHub
 
 Secret scanning helps protect sensitive information, such as API keys and access tokens, from being accidentally committed to your repository. Follow the steps below to enable secret scanning in your GitHub repository.
 
-## Prerequisites
-
-- You must have admin permissions for the repository.
-- Your repository must belong to a GitHub organization that has **GitHub Advanced Security** enabled.
 
 ---
 

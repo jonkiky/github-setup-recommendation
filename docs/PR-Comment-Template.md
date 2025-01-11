@@ -1,3 +1,5 @@
+# PR Comment Template
+
 # Setting Up a PR Comment Template in GitHub
 
 GitHub allows you to define templates for pull request descriptions, but for comment templates, you'll need to provide a reusable format for reviewers to use during the review process.

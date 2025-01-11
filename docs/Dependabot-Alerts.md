@@ -1,11 +1,10 @@
+# Monitoring vulnerabilities 
+
 # Enabling Dependabot Alerts on GitHub
+
 
 Dependabot alerts notify you about vulnerabilities in the dependencies used by your repository and suggest ways to resolve them. Follow these steps to enable Dependabot alerts in your GitHub repository.
 
-## Prerequisites
-
-- You must have admin permissions for the repository.
-- The repository must have a dependency manifest or lock file (e.g., `package.json`, `Gemfile.lock`, `requirements.txt`).
 
 ---
 
