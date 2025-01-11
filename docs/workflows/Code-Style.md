@@ -17,14 +17,14 @@ To ensure consistent styling across your codebase, you can use **ESLint** to enf
 
 ## How to Use ESLint with GitHub Actions
 
-### 1. Configure ESLint and Prettier
 
-#### Step 1: Install ESLint
+#### Step 1: Install ESLint V8
 
 Install ESLint as a development dependency:
 
 ```bash
-npm install eslint --save-dev
+npm install eslint@^8 --save-dev
+
 ```
 
 
@@ -67,39 +67,45 @@ npm install eslint-config-prettier eslint-plugin-prettier --save-dev
 
 ####  Step 5: Update ESLint Configuration
 
-Modify your .eslintrc file to include Prettier integration. Below is an example configuration:
+Modify your .eslintrc.js file to include Prettier integration. Below is an example configuration:
 
-``` json
-{
-  "extends": [
-    "eslint:recommended",
-    "plugin:prettier/recommended"
+``` javascript
+module.exports = {
+  parser: 'babel-eslint', // or your preferred parser
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
   ],
-  "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      }
-    ]
-  }
-}
-``` 
-This configuration:
+  plugins: [
+    'react',
+    'jsx-a11y',
+  ],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2020,
+    sourceType: 'module',
+  },
+  rules: {
+    // Customize your rules as needed
+    'jsx-a11y/alt-text': 'warn',
+    'jsx-a11y/anchor-is-valid': 'warn',
+    // Add additional rule overrides here
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+};
 
-Extends ESLint's recommended rules.
-Enables Prettier as a plugin.
-Treats Prettier formatting issues as ESLint errors.
-Step 6: (Optional) Add a Prettier Configuration File
-To customize Prettier's formatting rules, create a .prettierrc file. Here's an example:
-
-```  json
-{
-  "semi": true,
-  "singleQuote": true,
-  "tabWidth": 2,
-  "trailingComma": "es5"
-}
 ``` 
 
 
@@ -125,7 +131,7 @@ By following these steps, you'll have a fully configured ESLint and Prettier set
 Add a script to your `package.json` file to define the linting process:
 
 ```json
-"lint:ci": "eslint . --ignore-path .gitignore --max-warnings 0"
+"lint:ci": "eslint  --max-warnings 0"
 
 ```
 

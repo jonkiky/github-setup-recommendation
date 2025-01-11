@@ -2,7 +2,7 @@
 
 We use the `eslint-plugin-jsx-a11y` to ensure 508 compliance in our projects. To use this plugin, you need to install ESLint and configure it to include the `jsx-a11y` plugin. Below is an example configuration:
 
-[Example ESLint Configuration](https://github.com/jonkiky/INS-WebPortal/blob/main/.eslintrc.js)
+[Example ESLint Configuration](https://github.com/jonkiky/github-setup-recommendation/blob/main/.eslintrc.js)
 
 Once the `eslint-plugin-jsx-a11y` is added, we can use a GitHub Action to trigger it during the pull request (PR) process.
 
