@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/github-setup-recommendation">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789948062710">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789948675091">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -31,12 +31,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.789948062710" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.789948675091" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.789948062710" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.789948675091" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.789948062710" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.789948062710" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.789948675091" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.789948675091" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -193,21 +193,16 @@
         <span>How to Use ESLint with GitHub Actions</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="1-configure-eslint-and-prettier">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-configure-eslint-and-prettier">#</doc-anchor-trigger>
-        <span>1. Configure ESLint and Prettier</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="step-1-install-eslint">
+<doc-anchor-target id="step-1-install-eslint-v8">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-install-eslint">#</doc-anchor-trigger>
-        <span>Step 1: Install ESLint</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-install-eslint-v8">#</doc-anchor-trigger>
+        <span>Step 1: Install ESLint V8</span>
     </h4>
 </doc-anchor-target>
 <p>Install ESLint as a development dependency:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">npm install eslint --save-dev</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">npm install eslint@^8 --save-dev
+</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="step-2-initialize-eslint">
     <h4>
@@ -257,36 +252,44 @@ After completing the setup, an .eslintrc file will be created in your project.</
         <span>Step 5: Update ESLint Configuration</span>
     </h4>
 </doc-anchor-target>
-<p>Modify your .eslintrc file to include Prettier integration. Below is an example configuration:</p>
+<p>Modify your .eslintrc.js file to include Prettier integration. Below is an example configuration:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-json"><code v-pre class="language-json">{
-  &quot;extends&quot;: [
-    &quot;eslint:recommended&quot;,
-    &quot;plugin:prettier/recommended&quot;
+<pre class="language-javascript"><code v-pre class="language-javascript">module.exports = {
+  parser: 'babel-eslint', // or your preferred parser
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
   ],
-  &quot;rules&quot;: {
-    &quot;prettier/prettier&quot;: [
-      &quot;error&quot;,
-      {
-        &quot;endOfLine&quot;: &quot;auto&quot;
-      }
-    ]
-  }
-}</code></pre>
-</doc-codeblock></div>
-<p>This configuration:</p>
-<p>Extends ESLint&#x27;s recommended rules.
-Enables Prettier as a plugin.
-Treats Prettier formatting issues as ESLint errors.
-Step 6: (Optional) Add a Prettier Configuration File
-To customize Prettier&#x27;s formatting rules, create a .prettierrc file. Here&#x27;s an example:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-json"><code v-pre class="language-json">{
-  &quot;semi&quot;: true,
-  &quot;singleQuote&quot;: true,
-  &quot;tabWidth&quot;: 2,
-  &quot;trailingComma&quot;: &quot;es5&quot;
-}</code></pre>
+  plugins: [
+    'react',
+    'jsx-a11y',
+  ],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2020,
+    sourceType: 'module',
+  },
+  rules: {
+    // Customize your rules as needed
+    'jsx-a11y/alt-text': 'warn',
+    'jsx-a11y/anchor-is-valid': 'warn',
+    // Add additional rule overrides here
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+};
+</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="step-7-test-the-setup">
     <h4>
@@ -312,7 +315,7 @@ To customize Prettier&#x27;s formatting rules, create a .prettierrc file. Here&#
 </doc-anchor-target>
 <p>Add a script to your <code v-pre>package.json</code> file to define the linting process:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-json"><code v-pre class="language-json">&quot;lint:ci&quot;: &quot;eslint . --ignore-path .gitignore --max-warnings 0&quot;
+<pre class="language-json"><code v-pre class="language-json">&quot;lint:ci&quot;: &quot;eslint  --max-warnings 0&quot;
 </code></pre>
 </doc-codeblock></div>
 <hr>
