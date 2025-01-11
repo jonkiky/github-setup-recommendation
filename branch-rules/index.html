@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/github-setup-recommendation">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789931644501">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789932415987">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -31,11 +31,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.6.0.789931644501" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.789932415987" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.789931644501" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.789932415987" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.789931644501" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.789932415987" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -177,6 +177,13 @@
     </h2>
 </doc-anchor-target>
 <p>A safeguard mechanism that ensures released tags remain immutable after being created. Once a tag is marked as released, it cannot be recreated, deleted, or modified, preserving the integrity and consistency of versioned releases.</p>
+<p>In Branch Rules, enable :</p>
+<ul>
+<li>Restrict creations</li>
+<li>Restrict creations</li>
+<li>Restrict creations</li>
+<li>Block force pushes</li>
+</ul>
 <p>See example:  <a href="https://github.com/jonkiky/github-setup-recommendation/settings/rules/3233309">https://github.com/jonkiky/github-setup-recommendation/settings/rules/3233309</a></p>
 <doc-anchor-target id="development-branch-protection">
     <h2>
@@ -184,7 +191,18 @@
         <span>Development Branch Protection</span>
     </h2>
 </doc-anchor-target>
-<p>A safeguard mechanism that ensures Development tags remain immutable after being created. Once a tag is marked as released, it cannot be recreated, deleted, or modified, preserving the integrity and consistency of versioned releases.</p>
+<p>Development Branch Protection enforces secure workflows by restricting branch creation/deletion, requiring pull requests with approvals, status checks, CodeQL scanning, blocking force pushes, and AI review via Copilot.</p>
+<p>In Branch Rules, enable :
+_ Restrict branch creations
+_ Restrict branch deletions
+_ Require a pull request before merging
+_ Require at least 1 approval for pull requests
+_ Block force pushes
+_ Require status checks to pass before merging
+_ Require CodeQL code scanning results
+_ Automatically request pull request review from GitHub Copilot</p>
+<p>See example:<br />
+<a href="https://github.com/jonkiky/github-setup-recommendation/settings/rules/3233346">https://github.com/jonkiky/github-setup-recommendation/settings/rules/3233346</a></p>
 <doc-anchor-target id="instructions-for-creating-a-branch-or-tag-ruleset-on-github">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#instructions-for-creating-a-branch-or-tag-ruleset-on-github">#</doc-anchor-trigger>
@@ -227,37 +245,12 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="step-4-define-target-branches-or-tags">
+<doc-anchor-target id="step-4-configure-ruleset-as-needed">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-4-define-target-branches-or-tags">#</doc-anchor-trigger>
-        <span>Step 4: Define Target Branches or Tags</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-4-configure-ruleset-as-needed">#</doc-anchor-trigger>
+        <span>Step 4: Configure Ruleset as needed</span>
     </h3>
 </doc-anchor-target>
-<ol>
-<li>Specify which branches or tags the ruleset applies to:
-<ul>
-<li>Use the <strong>Include</strong> field to define patterns for the branches or tags you want to target.</li>
-<li>Optionally, use the <strong>Exclude</strong> field to exclude specific branches or tags.</li>
-</ul>
-</li>
-</ol>
-<doc-anchor-target id="step-5-configure-ruleset-conditions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-5-configure-ruleset-conditions">#</doc-anchor-trigger>
-        <span>Step 5: Configure Ruleset Conditions</span>
-    </h3>
-</doc-anchor-target>
-<ol>
-<li>Select the conditions to enforce for your branches or tags:
-<ul>
-<li><strong>Require a pull request before merging</strong>: Ensure changes are merged only through a pull request.</li>
-<li><strong>Require status checks to pass before merging</strong>: Mandate that CI checks pass before merging.</li>
-<li><strong>Require signed commits</strong>: Enforce commit signing for added security.</li>
-<li><strong>Restrict who can push</strong>: Limit push access to specific users or teams.</li>
-</ul>
-</li>
-<li>Adjust rules according to the needs of your project.</li>
-</ol>
 <doc-anchor-target id="step-6-save-the-ruleset">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#step-6-save-the-ruleset">#</doc-anchor-trigger>
@@ -277,7 +270,6 @@
 <li>Perform actions such as pushing commits or merging pull requests to verify the ruleset’s enforcement.</li>
 <li>To make adjustments, return to the <strong>Rulesets</strong> section in the repository settings.</li>
 </ol>
-<p>By following these steps, you can effectively manage branch or tag protection rules and maintain the integrity of your GitHub repository.</p>
 
                                 
                                 <!-- Required only on API pages -->
