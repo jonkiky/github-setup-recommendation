@@ -96,7 +96,7 @@ jobs:
 
       # Step 4: Run ESLint with jsx-a11y plugin
       - name: Run ESLint
-        run: npx eslint --plugin "jsx-a11y" ./src
+        run: npx eslint --plugin "jsx-a11y" ./app
 
 
 ```
