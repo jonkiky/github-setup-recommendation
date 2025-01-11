@@ -1,6 +1,6 @@
 # Code Quality Control
 
-# Use Codacy for Code Quality Control
+## Use Codacy for Code Quality Control
 
 **Codacy** is an automated code quality, security, and coverage analysis tool that helps developers identify issues, enforce coding standards, and maintain high-quality code by integrating seamlessly into CI/CD workflows.
 

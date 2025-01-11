@@ -1,6 +1,6 @@
 # Monitoring vulnerabilities 
 
-# Enabling Dependabot Alerts on GitHub
+##  Enabling Dependabot Alerts on GitHub
 
 
 Dependabot alerts notify you about vulnerabilities in the dependencies used by your repository and suggest ways to resolve them. Follow these steps to enable Dependabot alerts in your GitHub repository.

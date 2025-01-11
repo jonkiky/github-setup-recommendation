@@ -1,7 +1,7 @@
 # Code Security Control
 
 
-# Use Snyk for Code Security Control
+##  Use Snyk for Code Security Control
 
 **Snyk** is a developer-friendly security platform that identifies and fixes vulnerabilities in code, open-source dependencies, containers, and infrastructure as code, seamlessly integrating into CI/CD workflows and development tools.
 

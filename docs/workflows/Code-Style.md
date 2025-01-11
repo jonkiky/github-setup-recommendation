@@ -1,4 +1,6 @@
-# Maintaining Consistent Code Styling with ESLint and GitHub Actions
+# Code Styling (ESlint)
+
+## Maintaining Consistent Code Styling with ESLint and GitHub Actions
 
 ## Problem to Solve
 
