@@ -1,4 +1,4 @@
-# 508 Compliance (ESLint Plugin jsx-a11y)
+# 508 Compliance
 
 We use the `eslint-plugin-jsx-a11y` to ensure 508 compliance in our projects. To use this plugin, you need to install ESLint and configure it to include the `jsx-a11y` plugin. Below is an example configuration:
 
