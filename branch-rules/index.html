@@ -4,38 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/github-setup-recommendation">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789944060266">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789944244124">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Secret Protection</title>
-    <meta name="title" content="Secret Protection">
-    <meta name="description" content="Secret scanning helps protect sensitive information, such as API keys and access tokens, from being accidentally committed to your repository.">
+    <title>Branch Rules</title>
+    <meta name="title" content="Branch Rules">
+    <meta name="description" content="A safeguard mechanism that ensures released tags remain immutable after being created.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://jonkiky.github.io/github-setup-recommendation/4-secret-management/">
+    <link rel="canonical" href="https://jonkiky.github.io/github-setup-recommendation/branch-rules/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jonkiky.github.io/github-setup-recommendation/4-secret-management/">
-    <meta property="og:title" content="Secret Protection">
-    <meta property="og:description" content="Secret scanning helps protect sensitive information, such as API keys and access tokens, from being accidentally committed to your repository.">
+    <meta property="og:url" content="https://jonkiky.github.io/github-setup-recommendation/branch-rules/">
+    <meta property="og:title" content="Branch Rules">
+    <meta property="og:description" content="A safeguard mechanism that ensures released tags remain immutable after being created.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://jonkiky.github.io/github-setup-recommendation/4-secret-management/">
-    <meta property="twitter:title" content="Secret Protection">
-    <meta property="twitter:description" content="Secret scanning helps protect sensitive information, such as API keys and access tokens, from being accidentally committed to your repository.">
+    <meta property="twitter:url" content="https://jonkiky.github.io/github-setup-recommendation/branch-rules/">
+    <meta property="twitter:title" content="Branch Rules">
+    <meta property="twitter:description" content="A safeguard mechanism that ensures released tags remain immutable after being created.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.6.0.789944060266" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.789944244124" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.789944060266" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.789944244124" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.789944060266" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.789944244124" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -164,63 +164,114 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="secret-protection" class="break-words">
+<doc-anchor-target id="branch-rules" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#secret-protection">#</doc-anchor-trigger>
-        <span>Secret Protection</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#branch-rules">#</doc-anchor-trigger>
+        <span>Branch Rules</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="enabling-secret-scanning-on-github">
+<doc-anchor-target id="released-tag-protection">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#enabling-secret-scanning-on-github">#</doc-anchor-trigger>
-        <span>Enabling Secret Scanning on GitHub</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#released-tag-protection">#</doc-anchor-trigger>
+        <span>Released Tag Protection</span>
     </h2>
 </doc-anchor-target>
-<p>Secret scanning helps protect sensitive information, such as API keys and access tokens, from being accidentally committed to your repository. Follow the steps below to enable secret scanning in your GitHub repository.</p>
-<hr>
-<doc-anchor-target id="steps-to-enable-secret-scanning">
+<p>A safeguard mechanism that ensures released tags remain immutable after being created. Once a tag is marked as released, it cannot be recreated, deleted, or modified, preserving the integrity and consistency of versioned releases.</p>
+<p>In Branch Rules, enable :</p>
+<ul>
+<li>Restrict creations</li>
+<li>Restrict creations</li>
+<li>Restrict creations</li>
+<li>Block force pushes</li>
+</ul>
+<p>See example:  <a href="https://github.com/jonkiky/github-setup-recommendation/settings/rules/3233309">https://github.com/jonkiky/github-setup-recommendation/settings/rules/3233309</a></p>
+<doc-anchor-target id="development-branch-protection">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#steps-to-enable-secret-scanning">#</doc-anchor-trigger>
-        <span>Steps to Enable Secret Scanning</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#development-branch-protection">#</doc-anchor-trigger>
+        <span>Development Branch Protection</span>
     </h2>
+</doc-anchor-target>
+<p>Development Branch Protection enforces secure workflows by restricting branch creation/deletion, requiring pull requests with approvals, status checks, CodeQL scanning, blocking force pushes, and AI review via Copilot.</p>
+<p>In Branch Rules, enable :</p>
+<ul>
+<li>Restrict branch creations</li>
+<li>Restrict branch deletions</li>
+<li>Require a pull request before merging</li>
+<li>Require at least 1 approval for pull requests</li>
+<li>Block force pushes</li>
+<li>Require status checks to pass before merging</li>
+<li>Require CodeQL code scanning results</li>
+<li>Automatically request pull request review from GitHub Copilot</li>
+</ul>
+<p>See example:<br />
+<a href="https://github.com/jonkiky/github-setup-recommendation/settings/rules/3233346">https://github.com/jonkiky/github-setup-recommendation/settings/rules/3233346</a></p>
+<doc-anchor-target id="instructions-for-creating-a-branch-or-tag-ruleset-on-github">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#instructions-for-creating-a-branch-or-tag-ruleset-on-github">#</doc-anchor-trigger>
+        <span>Instructions for Creating a Branch or Tag Ruleset on GitHub</span>
+    </h2>
+</doc-anchor-target>
+<p>Follow these steps to create a branch or tag ruleset in your GitHub repository:</p>
+<doc-anchor-target id="step-1-access-repository-settings">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-access-repository-settings">#</doc-anchor-trigger>
+        <span>Step 1: Access Repository Settings</span>
+    </h3>
 </doc-anchor-target>
 <ol>
-<li><p><strong>Navigate to Your Repository</strong>:</p>
+<li>Go to your <strong>GitHub repository</strong>.</li>
+<li>Click on the <strong>Settings</strong> tab at the top of the repository page.</li>
+</ol>
+<doc-anchor-target id="step-2-open-rulesets">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2-open-rulesets">#</doc-anchor-trigger>
+        <span>Step 2: Open Rulesets</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>Scroll down to the <strong>Code and automation</strong> section.</li>
+<li>Click on <strong>Rulesets</strong> to manage branch and tag rulesets.</li>
+</ol>
+<doc-anchor-target id="step-3-create-a-new-ruleset">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-3-create-a-new-ruleset">#</doc-anchor-trigger>
+        <span>Step 3: Create a New Ruleset</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>Click the <strong>New ruleset</strong> button.</li>
+<li>In the dialog window:
 <ul>
-<li>Go to your GitHub repository on <a href="https://github.com">GitHub</a>.</li>
-</ul>
-</li>
-<li><p><strong>Access the Repository Settings</strong>:</p>
-<ul>
-<li>Click on the <strong>Settings</strong> tab in the repository&#x27;s navigation bar.</li>
-</ul>
-</li>
-<li><p><strong>Open the Security and Analysis Section</strong>:</p>
-<ul>
-<li>In the left sidebar, scroll down to <strong>Security</strong>.</li>
-<li>Under <strong>Security</strong> settings, click on <strong>Code security and analysis</strong>.</li>
-</ul>
-</li>
-<li><p><strong>Enable Secret Scanning</strong>:</p>
-<ul>
-<li>Locate the <strong>Secret scanning</strong> option.</li>
-<li>If the feature is not already enabled, click <strong>Enable</strong>.</li>
-</ul>
-</li>
-<li><p><strong>Optional - Enable Push Protection</strong>:</p>
-<ul>
-<li>Push protection prevents commits containing detected secrets from being pushed to the repository.</li>
-<li>If you see the option for <strong>Push Protection</strong>, click <strong>Enable Push Protection</strong> to further secure your repository.</li>
-</ul>
-</li>
-<li><p><strong>Save Changes</strong>:</p>
-<ul>
-<li>If prompted, save your changes to confirm.</li>
+<li>Enter a name for the ruleset in the <strong>Name</strong> field.</li>
+<li>Choose whether the ruleset applies to <strong>Branches</strong> or <strong>Tags</strong>.</li>
 </ul>
 </li>
 </ol>
-<hr>
-<p>For more details, visit GitHub&#x27;s <a href="https://docs.github.com/en/code-security/secret-scanning">Secret Scanning documentation</a>.</p>
+<doc-anchor-target id="step-4-configure-ruleset-as-needed">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-4-configure-ruleset-as-needed">#</doc-anchor-trigger>
+        <span>Step 4: Configure Ruleset as needed</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="step-6-save-the-ruleset">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-6-save-the-ruleset">#</doc-anchor-trigger>
+        <span>Step 6: Save the Ruleset</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>Click the <strong>Create</strong> or <strong>Save ruleset</strong> button to finalize your settings.</li>
+</ol>
+<doc-anchor-target id="step-7-manage-and-test-the-ruleset">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-7-manage-and-test-the-ruleset">#</doc-anchor-trigger>
+        <span>Step 7: Manage and Test the Ruleset</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>Perform actions such as pushing commits or merging pull requests to verify the ruleset’s enforcement.</li>
+<li>To make adjustments, return to the <strong>Rulesets</strong> section in the repository settings.</li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
@@ -228,7 +279,7 @@
                             </div>
                             <footer class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/jonkiky/github-setup-recommendation/blob/main/docs/4 secret-management.md" target="_blank" rel="noopener">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/jonkiky/github-setup-recommendation/blob/main/docs/Branch-Rules.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
@@ -236,16 +287,23 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../5-pr-comment-template/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../about-us/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">PR Comment Template</span>
+                                                <span class="block mt-1">About Us</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../-index/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Home</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -286,6 +344,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Secret Protection", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Branch Rules", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
