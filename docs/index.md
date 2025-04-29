@@ -1,6 +1,3 @@
-# Home
-
-## GitHub Setup and Best Practices Documentation
 
 ## Introduction
 
@@ -19,44 +16,46 @@ The documentation aims to:
 ---
 
 ## Key Topics
+### **GitHub Default Collaborators**
+   - GitHub Default Collaborators are users automatically granted access to new repositories within an organization based on preconfigured permission settings.
 
-### 1. **GitHub Branch Rules**
+
+### **GitHub Branch Rules**
    - Establish branch protection rules to prevent unauthorized changes.
    - Enforce PR reviews, status checks, and commit message guidelines.
    - Require linear history and restrict force pushes to critical branches.
 
-### 2. **Monitoring Security Vulnerabilities**
+### **Monitoring Security Vulnerabilities**
    - Enable GitHub’s Dependabot alerts to track and resolve dependency vulnerabilities.
    - Integrate third-party tools for real-time vulnerability monitoring.
 
-### 3. **Secret Protection**
-   - Utilize GitHub’s Secret Scanning to detect and remediate leaked secrets.
-   - Set up encrypted GitHub Actions secrets for workflows.
-
-### 4. **PR Comment Template**
-   - Define a standard Pull Request (PR) comment template to ensure consistent and thorough reviews.
-   - Include sections for code functionality, readability, tests, and documentation.
-
-### 5. **508 Compliance Checker Workflow**
-   - Create a GitHub Actions workflow to automate accessibility checks.
-   - Identify and address accessibility issues to maintain compliance with the 508 standards.
-
-### 6. **Code Style Enforcement**
-   - Use linters and formatters (e.g., ESLint, Prettier) for consistent code style.
-   - Enforce style rules via pre-commit hooks and CI workflows.
-
-### 7. **Unit Testing**
+### **Unit Testing**
    - Define a standard for writing and organizing unit tests.
    - Automate test execution in CI pipelines to catch regressions early.
 
-### 8. **Code Quality Control**
+### **Secret Protection**
+   - Utilize GitHub’s Secret Scanning to detect and remediate leaked secrets.
+   - Set up encrypted GitHub Actions secrets for workflows.
+
+### **Code Quality Control**
    - Leverage tools like SonarQube or CodeClimate for code analysis.
    - Set up dashboards to monitor maintainability, complexity, and coverage metrics.
 
-### 9. **Code Security Control**
+### **Code Security Control**
    - Integrate static application security testing (SAST) tools to identify vulnerabilities in the code.
    - Implement runtime security measures for enhanced protection.
 
+### **508 Compliance Checker Workflow**
+   - Create a GitHub Actions workflow to automate accessibility checks.
+   - Identify and address accessibility issues to maintain compliance with the 508 standards.
+
+### **Code Style Enforcement**
+   - Use linters and formatters (e.g., ESLint, Prettier) for consistent code style.
+   - Enforce style rules via pre-commit hooks and CI workflows.
+
+### **PR Comment Template**
+   - Define a standard Pull Request (PR) comment template to ensure consistent and thorough reviews.
+   - Include sections for code functionality, readability, tests, and documentation.
 ---
 
 ## Getting Started

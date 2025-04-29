@@ -2,7 +2,7 @@ input: ./docs
 output: .retype
 url: https://jonkiky.github.io/github-setup-recommendation/
 branding:
-  title: RepoWizard 
+  title: GitGuru 
   label: 1.0.0
 
 links:
